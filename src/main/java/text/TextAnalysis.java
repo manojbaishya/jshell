@@ -19,7 +19,7 @@ public class TextAnalysis {
 
         var file = new File(filepath);
         if (!file.exists()) {
-            System.err.println("File does not exist: %s".formatted(file.getAbsolutePath()));
+            System.err.printf("File does not exist: %s%n", file.getAbsolutePath());
             return;
         }
 
@@ -37,7 +37,7 @@ public class TextAnalysis {
                 }
             }
         } catch (IOException error) {
-            System.err.println("Error reading file: %s".formatted(error.getMessage()));
+            System.err.printf("Error reading file: %s%n", error.getMessage());
         }
     }
 
@@ -99,7 +99,7 @@ public class TextAnalysis {
 
         var file = new File(filepath);
         if (!file.exists()) {
-            System.err.println("File does not exist: %s".formatted(file.getAbsolutePath()));
+            System.err.printf("File does not exist: %s%n", file.getAbsolutePath());
             return;
         }
 
@@ -120,7 +120,7 @@ public class TextAnalysis {
                 System.out.printf("'%s'%n", word);
             }
         } catch (IOException error) {
-            System.err.println("Error reading file: %s".formatted(error.getMessage()));
+            System.err.printf("Error reading file: %s%n", error.getMessage());
         }
     }
 }
