@@ -1,0 +1,5 @@
+package modelling;
+
+public enum VehicleType {
+    TWOWHEELER, FOURWHEELERNONCOMMERCIAL, FOURWHEELERCOMMERCIAL
+}

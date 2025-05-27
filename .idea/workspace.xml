@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dcb64deb-addc-492b-8ef7-47975090e132" name="Changes" comment="" />
+    <list default="true" id="dcb64deb-addc-492b-8ef7-47975090e132" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,18 +16,34 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;manojbaishya&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:manojbaishya/jshell.git&quot;,
+    &quot;accountId&quot;: &quot;abcef563-1c84-488d-94c7-c8d19ecb55fe&quot;
+  }
+}</component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="true" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2xYG8KiMRmVXyunw1Z9Exg1Z1J2" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -43,6 +61,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Run.executor": "Run",
+    "JUnit.CustomerServiceTest.purchaseFuel.executor": "Run",
     "Maven.jshell [install].executor": "Run",
     "Maven.mvn -B clean verify.executor": "Run",
     "Maven.mvn -D clean verify.executor": "Run",
@@ -51,10 +70,12 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
-    "last_opened_file_path": "/home/manoj/Code/jshell/target/classes",
+    "last_opened_file_path": "/home/manoj/Code/jshell/src/main/java/modelling",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -72,15 +93,45 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/modelling" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="modelling" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Run">
+  <component name="RunManager" selected="JUnit.CustomerServiceTest.purchaseFuel">
+    <configuration name="CustomerServiceTest.purchaseFuel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="jshell" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="modelling.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="modelling" />
+      <option name="MAIN_CLASS_NAME" value="modelling.CustomerServiceTest" />
+      <option name="METHOD_NAME" value="purchaseFuel" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Run" />
+      <item itemvalue="JUnit.CustomerServiceTest.purchaseFuel" />
       <item itemvalue="Maven.Build" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CustomerServiceTest.purchaseFuel" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -98,11 +149,36 @@
       <option name="presentableId" value="Default" />
       <updated>1748107432531</updated>
       <workItem from="1748107433696" duration="1377000" />
+      <workItem from="1748110078481" duration="789000" />
+      <workItem from="1748117541049" duration="68000" />
+      <workItem from="1748359456119" duration="328000" />
     </task>
+    <task id="LOCAL-00001" summary="Initialized maven project">
+      <option name="closed" value="true" />
+      <created>1748110348094</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1748110348094</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Some cleanup">
+      <option name="closed" value="true" />
+      <created>1748110386901</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1748110386901</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initialized maven project" />
+    <MESSAGE value="Some cleanup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some cleanup" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>
