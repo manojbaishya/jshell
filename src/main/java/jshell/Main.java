@@ -3,8 +3,8 @@ package jshell;
 import java.util.List;
 
 import jshell.concurrency.ConcurrentWorkers;
-import text.Regex;
-import text.TextAnalysis;
+import jshell.text.Regex;
+import jshell.text.TextAnalysis;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,9 +1,9 @@
 package jshell.concurrency;
 
-import text.TextAnalysis;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+import jshell.text.TextAnalysis;
 
 public class ConcurrentWorkers {
     private final String filepath;

@@ -1,4 +1,4 @@
-package text;
+package jshell.text;
 
 import java.io.BufferedReader;
 import java.io.File;
