@@ -7,6 +7,8 @@ public class Regex {
     private Regex() {}
 
     public static void regexDemo1() {
+        System.out.println("INFO regexDemo1");
+
         String text = "This is the text which is to be searched for occurrences of the word 'is'.";
         String searchPattern = "is";
         System.out.printf("Text: %s%n", text);
