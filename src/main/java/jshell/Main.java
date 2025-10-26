@@ -1,8 +1,10 @@
-import concurrency.ConcurrentWorkers;
-import text.Regex;
-import text.TextAnalysis;
+package jshell;
 
 import java.util.List;
+
+import jshell.concurrency.ConcurrentWorkers;
+import text.Regex;
+import text.TextAnalysis;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,9 +12,7 @@ public class Main {
         System.out.println("Welcome to the Java Scripting playground!");
 
         if (args.length > 0) {
-            for (String arg : args) {
-                System.out.println("Argument: " + arg);
-            }
+            for (String arg : args) { System.out.println("Argument: " + arg); }
         } else {
             System.out.printf("No arguments provided.%n%n");
         }

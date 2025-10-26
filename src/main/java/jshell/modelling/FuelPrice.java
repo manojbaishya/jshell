@@ -1,4 +1,4 @@
-package modelling;
+package jshell.modelling;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;

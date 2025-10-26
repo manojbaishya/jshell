@@ -1,4 +1,4 @@
-package modelling;
+package jshell.modelling;
 
 public class Customer {
     public Customer(String registrationNumber, VehicleType vehicleType) {

@@ -1,4 +1,4 @@
-package concurrency;
+package jshell.concurrency;
 
 import text.TextAnalysis;
 
