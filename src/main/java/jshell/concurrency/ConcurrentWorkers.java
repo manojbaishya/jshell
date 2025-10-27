@@ -6,19 +6,31 @@ import java.io.InputStream;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import jshell.Demos;
 import jshell.text.TextAnalysis;
 
 public class ConcurrentWorkers {
+    private final static Logger logger = LoggerFactory.getLogger(ConcurrentWorkers.class);
     private final byte[] fileContents;
 
-    public ConcurrentWorkers(InputStream fileContents) throws IOException {
+    public ConcurrentWorkers(String filepath) throws IOException {
+        var fileContents = Demos.class.getClassLoader().getResourceAsStream(filepath);
+        if (fileContents == null) {
+            this.fileContents = null;
+            System.err.println("Resource not found: all_about_coffee.txt");
+            return;
+        }
+        
         this.fileContents = fileContents.readAllBytes();
         fileContents.close();
     }
 
     public void readFileInSequence(int[] lineNumbers) {
-        System.out.println("INFO readFileInSequence");
-        System.out.println("**************Read file using single OS threads**************");
+        logger.atInfo().log("readFileInSequence");
+        logger.atInfo().log("**************Read file using single OS threads**************");
 
         try (ExecutorService manager = Executors.newSingleThreadExecutor()) {
             var coffeeMagazine = new TextAnalysis(new ByteArrayInputStream(fileContents));
@@ -27,8 +39,8 @@ public class ConcurrentWorkers {
     }
 
     public void readFileManyWorkers(int[] lineNumbers) {
-        System.out.println("INFO readFileManyWorkers");
-        System.out.println("**************Read file using OS threads**************");
+        logger.atInfo().log("readFileManyWorkers");
+        logger.atInfo().log("**************Read file using OS threads**************");
 
         try (ExecutorService manager = Executors.newFixedThreadPool(lineNumbers.length)) {
             var coffeeMagazine = new TextAnalysis(new ByteArrayInputStream(fileContents));
@@ -37,8 +49,8 @@ public class ConcurrentWorkers {
     }
 
     public void readFileManyWorkersWithVirtualThreads(int[] lineNumbers) {
-        System.out.println("INFO readFileManyWorkersWithVirtualThreads");
-        System.out.println("**************Read file using Virtual threads**************");
+        logger.atInfo().log("readFileManyWorkersWithVirtualThreads");
+        logger.atInfo().log("**************Read file using Virtual threads**************");
 
         try (ExecutorService manager = Executors.newVirtualThreadPerTaskExecutor()) {
             var coffeeMagazine = new TextAnalysis(new ByteArrayInputStream(fileContents));

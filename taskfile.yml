@@ -1,0 +1,25 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  BIN: jshell-0.0.1-shaded.jar
+
+tasks:
+  build:
+    cmds:
+      - ./mvnw clean package
+    status:
+      - 
+    silent: false
+  execute:
+    dir: target
+    cmds:
+      - java -jar {{.BIN}} jshell.Main 
+    silent: false
+  run:
+    deps: [build]
+    dir: target
+    cmds:
+      - java -jar {{.BIN}} jshell.Main 
+    silent: false
