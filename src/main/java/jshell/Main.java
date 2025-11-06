@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import jshell.text.Regex;
 
 public class Main {
-    final static Logger logger = LoggerFactory.getLogger(Main.class);
+    static final Logger logger = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) throws IOException {
         logger.atInfo().log("Hello, World!");

@@ -2,7 +2,6 @@ package jshell.concurrency;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -13,19 +12,19 @@ import jshell.Demos;
 import jshell.text.TextAnalysis;
 
 public class ConcurrentWorkers {
-    private final static Logger logger = LoggerFactory.getLogger(ConcurrentWorkers.class);
+    private static final Logger logger = LoggerFactory.getLogger(ConcurrentWorkers.class);
     private final byte[] fileContents;
 
     public ConcurrentWorkers(String filepath) throws IOException {
-        var fileContents = Demos.class.getClassLoader().getResourceAsStream(filepath);
-        if (fileContents == null) {
+        var fileStream = Demos.class.getClassLoader().getResourceAsStream(filepath);
+        if (fileStream == null) {
             this.fileContents = null;
-            System.err.println("Resource not found: all_about_coffee.txt");
+            logger.atError().log("Resource not found: all_about_coffee.txt");
             return;
         }
         
-        this.fileContents = fileContents.readAllBytes();
-        fileContents.close();
+        this.fileContents = fileStream.readAllBytes();
+        fileStream.close();
     }
 
     public void readFileInSequence(int[] lineNumbers) {
