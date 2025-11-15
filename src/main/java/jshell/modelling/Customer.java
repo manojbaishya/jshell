@@ -1,17 +1,31 @@
 package jshell.modelling;
 
+import org.jspecify.annotations.NonNull;
+
 public class Customer {
-    public Customer(String registrationNumber, VehicleType vehicleType) {
+    public Customer(@NonNull String name, @NonNull String registrationNumber, @NonNull VehicleType vehicleType) {
         super();
+        this.name = name;
         this.registrationNumber = registrationNumber;
         this.vehicleType = vehicleType;
     }
 
-    private String registrationNumber;
-    public String getRegistrationNumber() { return registrationNumber; }
-    public void setRegistrationNumber(String registrationNumber) { this.registrationNumber = registrationNumber; }
+    @NonNull
+    private final String name;
+    public @NonNull String getName() { return name; }
 
+    @NonNull
+    private String registrationNumber;
+    public @NonNull String getRegistrationNumber() { return registrationNumber; }
+    public void setRegistrationNumber(@NonNull String registrationNumber) { this.registrationNumber = registrationNumber; }
+
+    @NonNull
     private VehicleType vehicleType;
-    public VehicleType getVehicleType() { return vehicleType; }
-    public void setVehicleType(VehicleType vehicleType) { this.vehicleType = vehicleType; }
+    public @NonNull VehicleType getVehicleType() { return vehicleType; }
+    public void setVehicleType(@NonNull VehicleType vehicleType) { this.vehicleType = vehicleType; }
+
+    @Override
+    public String toString() {
+        return "Customer{name='%s', registrationNumber='%s', vehicleType=%s}".formatted(name, registrationNumber, vehicleType);
+    }
 }

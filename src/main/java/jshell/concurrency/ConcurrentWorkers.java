@@ -16,10 +16,10 @@ public class ConcurrentWorkers {
     private final byte[] fileContents;
 
     public ConcurrentWorkers(String filepath) throws IOException {
-        var fileStream = Demos.class.getClassLoader().getResourceAsStream(filepath);
+        var fileStream = ConcurrentWorkers.class.getClassLoader().getResourceAsStream(filepath);
         if (fileStream == null) {
             this.fileContents = null;
-            logger.atError().log("Resource not found: all_about_coffee.txt");
+            logger.atError().log("Resource not found: {}", filepath);
             return;
         }
         

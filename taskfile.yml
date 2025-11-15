@@ -15,11 +15,11 @@ tasks:
   execute:
     dir: target
     cmds:
-      - java -jar {{.BIN}} jshell.Main 
+      - java --enable-native-access=ALL-UNNAMED -jar {{.BIN}} jshell.Main
     silent: false
   run:
     deps: [build]
     dir: target
     cmds:
-      - java -jar {{.BIN}} jshell.Main 
+      - java --enable-native-access=ALL-UNNAMED -jar {{.BIN}} jshell.Main
     silent: false

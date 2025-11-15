@@ -4,13 +4,17 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.Duration;
 import java.time.Instant;
 import java.util.UUID;
 
+import me.tongfei.progressbar.DelegatingProgressBarConsumer;
+import me.tongfei.progressbar.ProgressBar;
+import me.tongfei.progressbar.ProgressBarBuilder;
+import me.tongfei.progressbar.ProgressBarStyle;
+import net.datafaker.Faker;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.github.javafaker.Faker;
 
 public class Generator {
     static final Logger logger = LoggerFactory.getLogger(Generator.class);
@@ -26,26 +30,29 @@ public class Generator {
         String filename = "generated-data.%s-%s.csv".formatted(
                 Instant.now().toString().replaceAll("(//|:)", "."),
                 UUID.randomUUID());
-        logger.atInfo().log("Writing data to file: '{}'...", filename);
-        try (var writer = new PrintWriter(new BufferedWriter(new FileWriter(filename)))) {
+        logger.atInfo().log("Writing {} lines of data to file: '{}'...", numLines, filename);
+        try (
+                var writer = new PrintWriter(new BufferedWriter(new FileWriter(filename)));
+                var pb = new ProgressBarBuilder().setStyle(ProgressBarStyle.ASCII).setInitialMax(numLines).setTaskName("Generator").setConsumer(new DelegatingProgressBarConsumer(logger::info, 100)).build()
+        ) {
             writer.println("Name,Address,Company,Job,Domain,University,SSN");
             for (int i = 0; i < numLines; i++) {
-                logger.atInfo().log("Writing Line #{}", i + 1);
-                writer.println(
-                        "%s,%s,%s,%s,%s,%s,%s"
-                        .formatted(
-                                faker.name().fullName(),
-                                faker.address().fullAddress().replace(", ", " "),
-                                faker.company().name().replace(", ", " "),
-                                faker.job().title(),
-                                faker.job().field(),
-                                faker.university().name().replace(", ", " "),
-                                faker.idNumber().ssnValid()));
+                var line = "%s,%s,%s,%s,%s,%s,%s".formatted(
+                        faker.name().fullName(),
+                        faker.address().fullAddress().replace(", ", " "),
+                        faker.company().name().replace(", ", " "),
+                        faker.job().title(),
+                        faker.job().field(),
+                        faker.university().name().replace(", ", " "),
+                        faker.idNumber().ssnValid());
+                writer.println(line);
+                Thread.sleep(1);
+                pb.step();
             }
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
             logger.atError().log("An error occurred: {}", e.getMessage());
         }
 
-        logger.atInfo().log("Wrote data to file: '{}' - Done!", filename);
+        logger.atInfo().log("Wrote {} lines of data to file: '{}' - Done!", numLines, filename);
     }
 }
