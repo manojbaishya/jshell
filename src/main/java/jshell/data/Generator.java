@@ -14,8 +14,8 @@ import com.github.javafaker.Faker;
 
 public class Generator {
     static final Logger logger = LoggerFactory.getLogger(Generator.class);
-    private int numLines;
-    private Faker faker;
+    private final int numLines;
+    private final Faker faker;
 
     public Generator(int numLines) {
         this.numLines = numLines;
@@ -43,7 +43,7 @@ public class Generator {
                                 faker.idNumber().ssnValid()));
             }
         } catch (IOException e) {
-            logger.atError().log("An error occurred: " + e.getMessage());
+            logger.atError().log("An error occurred: {}", e.getMessage());
         }
 
         logger.atInfo().log("Wrote data to file: '{}' - Done!", filename);

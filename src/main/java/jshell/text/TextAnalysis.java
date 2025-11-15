@@ -18,8 +18,16 @@ public class TextAnalysis {
 
     public TextAnalysis(InputStream fileContents) { this.fileContents = fileContents; }
 
+    private void logReadError(IOException error) {
+        logger.atError().log("Error reading file: {}", error.getMessage());
+    }
+
+    private static void logLine(int lineNumber, String line) {
+        logger.atInfo().log("Line {}: {}", lineNumber, line);
+    }
+
     public void analyzeText(String pattern) {
-        logger.atInfo().setMessage("Analyzing text for pattern '{}'...").addArgument(pattern).log();
+        logger.atInfo().log("Analyzing text for pattern '{}'...", pattern);
 
         try (var reader = new BufferedReader(new InputStreamReader(fileContents))) {
             String line;
@@ -27,13 +35,15 @@ public class TextAnalysis {
             while ((line = reader.readLine()) != null) {
                 lineNumber++;
                 if (pattern != null && !pattern.isEmpty()) {
-                    if (line.contains(pattern)) { logger.atInfo().setMessage("Line {}: {}").addArgument(lineNumber).addArgument(line).log(); }
+                    if (line.contains(pattern)) {
+                        logLine(lineNumber, line);
+                    }
                 } else {
-                    logger.atInfo().setMessage("Line {}: {}").addArgument(lineNumber).addArgument(line).log();
+                    logLine(lineNumber, line);
                 }
             }
         } catch (IOException error) {
-            logger.atError().setMessage("Error reading file: {}").addArgument(error.getMessage()).log();
+            logReadError(error);
         }
     }
 
@@ -48,7 +58,7 @@ public class TextAnalysis {
                 while ((line = reader.readLine()) != null) if (line.matches(pattern)) lines.add(line);
             }
         } catch (IOException error) {
-            logger.atError().setMessage("Error reading file: {}").addArgument(error.getMessage()).log();
+            logReadError(error);
         }
         return lines;
     }
@@ -69,7 +79,7 @@ public class TextAnalysis {
                 }
             }
         } catch (IOException error) {
-            logger.atError().setMessage("Error reading file: {}").addArgument(error.getMessage()).log();
+            logReadError(error);
         }
         return lines;
     }
@@ -77,7 +87,7 @@ public class TextAnalysis {
     public void processData(List<String> lines) { for (String line : lines) logger.atInfo().log(line); }
 
     public void tokenize(int lineNumber) {
-        logger.atInfo().setMessage("Tokenizing line number '{}'...").addArgument(lineNumber).log();
+        logger.atInfo().log("Tokenizing line number '{}'...", lineNumber);
 
         String line;
         try (var reader = new BufferedReader(new InputStreamReader(fileContents))) {
@@ -89,12 +99,12 @@ public class TextAnalysis {
             line = reader.readLine();
             if (line == null) return;
 
-            logger.atInfo().setMessage("Line {}: {}").addArgument(lineNumber).addArgument(line).log();
+            logLine(lineNumber, line);
             logger.atInfo().log("Tokenized words are:");
             String[] words = line.split("\\s");
-            for (String word : words) { logger.atInfo().setMessage("'{}'").addArgument(word).log(); }
+            for (String word : words) { logger.atInfo().log("'{}'", word); }
         } catch (IOException error) {
-            logger.atError().setMessage("Error reading file: {}").addArgument(error.getMessage()).log();
+            logReadError(error);
         }
     }
 }

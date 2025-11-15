@@ -10,20 +10,17 @@ import jshell.text.Regex;
 public class Main {
     static final Logger logger = LoggerFactory.getLogger(Main.class);
 
-    public static void main(String[] args) throws IOException {
+    static void main(String[] args) throws IOException {
         logger.atInfo().log("Hello, World!");
-        logger.atInfo().setMessage("Running program '{}' on Java VM version {} in path '{}'")
-            .addArgument(Main.class.getCanonicalName())
-            .addArgument(Runtime.version().feature())
-            .addArgument(System.getProperty("java.home")).log();
+        logger.atInfo().log("Running program '{}' on Java VM version {} in path '{}'", Main.class.getCanonicalName(), Runtime.version().feature(), System.getProperty("java.home"));
 
         logger.atInfo().log("Welcome to the Java Scripting playground!");
 
-        if (args.length > 0) for (String arg : args) logger.atInfo().log("Argument: " + arg);
+        if (args.length > 0) for (String arg : args) logger.atInfo().log("Argument: {}", arg);
         else logger.atInfo().log("No arguments provided.%n%n");
 
         String userDirectory = System.getProperty("user.dir");
-        logger.atInfo().log("Current working directory: " + userDirectory);
+        logger.atInfo().log("Current working directory: {}", userDirectory);
 
         // Demos
         Demos.dataGenerator(5000);
