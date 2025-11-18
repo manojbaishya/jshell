@@ -4,18 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dcb64deb-addc-492b-8ef7-47975090e132" name="Changes" comment="Added example for Optional&lt;T&gt;">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/build.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build.yml" afterDir="false" />
+    <list default="true" id="dcb64deb-addc-492b-8ef7-47975090e132" name="Changes" comment="Cleanup shade artifact">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jshell/Demos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jshell/Demos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jshell/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jshell/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jshell/data/Generator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/jshell/data/Generator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="repository" />
+    </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -225,7 +226,7 @@
       <workItem from="1763262898860" duration="3997000" />
       <workItem from="1763292189518" duration="4843000" />
       <workItem from="1763391651123" duration="64000" />
-      <workItem from="1763391816279" duration="1760000" />
+      <workItem from="1763391816279" duration="3584000" />
     </task>
     <task id="LOCAL-00001" summary="Initialized maven project">
       <option name="closed" value="true" />
@@ -275,7 +276,23 @@
       <option name="project" value="LOCAL" />
       <updated>1763218571768</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added DateTime, configurations, stream processing pipeline demos&#10;Changed build script">
+      <option name="closed" value="true" />
+      <created>1763431858616</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1763431858616</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Cleanup shade artifact">
+      <option name="closed" value="true" />
+      <created>1763431974191</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1763431974191</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +305,9 @@
     <MESSAGE value="Build change" />
     <MESSAGE value="Updates" />
     <MESSAGE value="Added example for Optional&lt;T&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added example for Optional&lt;T&gt;" />
+    <MESSAGE value="Added DateTime, configurations, stream processing pipeline demos&#10;Changed build script" />
+    <MESSAGE value="Cleanup shade artifact" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleanup shade artifact" />
   </component>
   <component name="VgoProject">
     <integration-enabled>false</integration-enabled>

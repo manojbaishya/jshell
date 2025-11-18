@@ -9,8 +9,6 @@ tasks:
   build:
     cmds:
       - ./mvnw clean package
-    status:
-      - 
     silent: false
   execute:
     dir: target
