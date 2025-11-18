@@ -1,0 +1,48 @@
+app:
+  name: org.dojo:jshell
+  version: "0.0.1"
+  environment: development
+
+logging:
+  level: INFO
+  file: logs/app.log
+  rotate:
+    enabled: true
+    maxSize: 10485760   # bytes (10 MB)
+    maxFiles: 5
+
+server:
+  host: localhost
+  port: 8080
+  ssl:
+    enabled: false
+    keystore: ""
+    keystorePassword: ""
+
+database:
+  url: jdbc:postgresql://localhost:5432/demo
+  username: username
+  password: password
+  pool:
+    maxSize: 10
+    minIdle: 2
+    maxLifetimeMs: 1800000
+
+features:
+  cachingEnabled: true
+  experimentalMode: false
+  sendEmailNotifications: true
+
+admins:
+  - alice@example.com
+  - bob@example.com
+  - charlie@example.com
+
+jobs:
+  - name: cleanupTemp
+    schedule: "0 0 * * *"
+    enabled: true
+
+  - name: sendReports
+    schedule: "0 */6 * * *"
+    enabled: false

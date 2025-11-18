@@ -4,12 +4,10 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.time.Duration;
 import java.time.Instant;
 import java.util.UUID;
 
 import me.tongfei.progressbar.DelegatingProgressBarConsumer;
-import me.tongfei.progressbar.ProgressBar;
 import me.tongfei.progressbar.ProgressBarBuilder;
 import me.tongfei.progressbar.ProgressBarStyle;
 import net.datafaker.Faker;
@@ -26,7 +24,7 @@ public class Generator {
         this.faker = new Faker();
     }
 
-    public void generateData() {
+    public void generateCsvData() {
         String filename = "generated-data.%s-%s.csv".formatted(
                 Instant.now().toString().replaceAll("(//|:)", "."),
                 UUID.randomUUID());
