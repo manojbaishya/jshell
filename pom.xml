@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.dojo</groupId>
-    <artifactId>jshell</artifactId>
+    <artifactId>javakit</artifactId>
     <version>0.0.1</version>
 
     <properties>
@@ -98,7 +98,7 @@
                                 <transformer
                                     implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <mainClass>
-                                        jshell.Main
+                                        javakit.Main
                                     </mainClass>
                                 </transformer>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>

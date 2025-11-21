@@ -1,4 +1,4 @@
-package jshell.datetimes;
+package javakit.datetimes;
 
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;

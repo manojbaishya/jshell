@@ -6,7 +6,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Build and test jshell
+name: Build and test javakit
 
 on:
   push:

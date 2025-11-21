@@ -3,7 +3,9 @@
 version: '3'
 
 vars:
-  BIN: jshell-0.0.1-shaded.jar
+  JAR: javakit-0.0.1-shaded.jar
+  JAVAARGS: --enable-native-access=ALL-UNNAMED
+  ENTRYPOINT: javakit.Main
 
 tasks:
   build:
@@ -13,11 +15,11 @@ tasks:
   execute:
     dir: target
     cmds:
-      - java --enable-native-access=ALL-UNNAMED -jar {{.BIN}} jshell.Main
+      - java {{.JAVAARGS}} -jar {{.JAR}} {{.ENTRYPOINT}}
     silent: false
   run:
     deps: [build]
     dir: target
     cmds:
-      - java --enable-native-access=ALL-UNNAMED -jar {{.BIN}} jshell.Main
+      - java {{.JAVAARGS}} -jar {{.JAR}} {{.ENTRYPOINT}}
     silent: false

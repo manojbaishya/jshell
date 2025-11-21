@@ -1,4 +1,4 @@
-package jshell.combinatorics;
+package javakit.combinatorics;
 
 import org.jspecify.annotations.NonNull;
 

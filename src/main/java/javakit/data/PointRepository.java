@@ -1,4 +1,4 @@
-package jshell.data;
+package javakit.data;
 
 import net.datafaker.Faker;
 

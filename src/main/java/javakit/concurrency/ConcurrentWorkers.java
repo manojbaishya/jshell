@@ -1,4 +1,4 @@
-package jshell.concurrency;
+package javakit.concurrency;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -8,8 +8,7 @@ import java.util.concurrent.Executors;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import jshell.Demos;
-import jshell.text.TextAnalysis;
+import javakit.text.TextAnalysis;
 
 public class ConcurrentWorkers {
     private static final Logger logger = LoggerFactory.getLogger(ConcurrentWorkers.class);

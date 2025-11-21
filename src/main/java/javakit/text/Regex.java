@@ -1,4 +1,4 @@
-package jshell.text;
+package javakit.text;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

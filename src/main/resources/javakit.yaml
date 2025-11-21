@@ -1,5 +1,5 @@
 app:
-  name: org.dojo:jshell
+  name: org.dojo:javakit
   version: "0.0.1"
   environment: development
 

@@ -1,4 +1,4 @@
-package jshell.text;
+package javakit.text;
 
 import java.io.BufferedReader;
 import java.io.IOException;

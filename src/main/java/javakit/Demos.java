@@ -1,29 +1,28 @@
-package jshell;
+package javakit;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Properties;
 import java.util.stream.Collectors;
 
-import jshell.combinatorics.Pairs;
-import jshell.data.Point;
-import jshell.data.PointRepository;
-import jshell.data.PointService;
-import jshell.datetimes.DateTime;
-import jshell.modelling.Customer;
-import jshell.modelling.CustomerRepository;
-import jshell.text.Regex;
+import javakit.combinatorics.Pairs;
+import javakit.data.Point;
+import javakit.data.PointRepository;
+import javakit.data.PointService;
+import javakit.datetimes.DateTime;
+import javakit.modelling.Customer;
+import javakit.modelling.CustomerRepository;
+import javakit.text.Regex;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import jshell.concurrency.ConcurrentWorkers;
-import jshell.data.Generator;
-import jshell.text.TextAnalysis;
+import javakit.concurrency.ConcurrentWorkers;
+import javakit.data.Generator;
+import javakit.text.TextAnalysis;
 import org.yaml.snakeyaml.Yaml;
 
 public final class Demos {
@@ -118,7 +117,7 @@ public final class Demos {
     }
 
     static void configurationLoaderProperties() throws IOException {
-        final String configurationFile = "/jshell.properties";
+        final String configurationFile = "/javakit.properties";
         logger.atInfo().log("Loading configuration file '{}'.", configurationFile);
         var configuration = new Properties();
         try (InputStream configurationContents = Demos.class.getResourceAsStream(configurationFile)) {
@@ -137,7 +136,7 @@ public final class Demos {
     }
 
     static void configurationLoaderYaml() throws IOException {
-        final String configurationFile = "/jshell.yaml";
+        final String configurationFile = "/javakit.yaml";
         logger.atInfo().log("Loading YAML configuration file '{}'.", configurationFile);
 
         var configuration = new Yaml();

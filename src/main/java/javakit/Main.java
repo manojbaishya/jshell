@@ -1,6 +1,6 @@
-package jshell;
+package javakit;
 
-import jshell.combinatorics.Pairs;
+import javakit.combinatorics.Pairs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,12 +30,12 @@ public class Main {
         Demos.configurationLoaderYaml();
         int countPoints = 1000;
         Demos.pointDataDemos(countPoints, Pairs.count(countPoints) / 2);
-        // Demos.csvDataGenerator(5000);
-        // Demos.filterLinesDemo();
-        // Demos.regexDemo();
-        // Demos.textAnalyserDemo();
-        // Demos.tokenizerDemo();
-        // Demos.concurrentWorkersDemo();
-        // Demos.optionalDemo();
+        Demos.csvDataGenerator(5000);
+        Demos.filterLinesDemo();
+        Demos.regexDemo();
+        Demos.textAnalyserDemo();
+        Demos.tokenizerDemo();
+        Demos.concurrentWorkersDemo();
+        Demos.optionalDemo();
     }
 }

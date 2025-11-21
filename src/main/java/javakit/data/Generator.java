@@ -1,4 +1,4 @@
-package jshell.data;
+package javakit.data;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

@@ -1,4 +1,4 @@
-package jshell.data;
+package javakit.data;
 
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;

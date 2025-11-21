@@ -1,4 +1,4 @@
-package jshell.modelling;
+package javakit.modelling;
 
 public class Location {
     private double latitude;

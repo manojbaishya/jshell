@@ -1,4 +1,4 @@
-package jshell.modelling;
+package javakit.modelling;
 
 import net.datafaker.Faker;
 

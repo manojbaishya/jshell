@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Run" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="jshell.Main" />
+    <option name="MAIN_CLASS_NAME" value="javakit.Main" />
     <module name="jshell" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/target/classes" />
     <method v="2">
